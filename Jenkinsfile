@@ -1,17 +1,22 @@
+Jenkinsfile (Declarative Pipeline)
 pipeline {
-  agent { label 'agent-1' }
+    agent any
 
-  stages {
-    stage('Setup') {
-      steps {
-        sh script: "", label: "Start of Pipeline"
-        sh script: "echo "Hello World"", label: "Print Something"
-      }
-    }
-
-    stage('build example') {
-      steps {
-        
-      }
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
 }
